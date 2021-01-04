@@ -3,7 +3,7 @@ import "./tour.scss";
 
 export default class Tour extends Component {
   render() {
-    const { id, img, name, info } = this.props.tour;
+    const { id, img, name, city } = this.props.tour;
     const { removeTour } = this.props;
 
     return (
