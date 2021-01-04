@@ -1,10 +1,25 @@
 import React, { Component } from "react";
 import "./tour.scss";
 
-export class Tour extends Component {
+export default class Tour extends Component {
   render() {
-    return <h1>Hello from tour</h1>;
+    const { id, img, name, info } = this.props.tour;
+    const { removeTour } = this.props;
+
+    return (
+      <article>
+        <div className="img-container">
+          <img src={img} alt="" />
+          <span className="close-btn">
+            <i className="fas fa-window-close" />
+          </span>
+        </div>
+
+        <div className="tour-info">
+          <h3>{city}</h3>
+          <h3>{name}</h3>
+        </div>
+      </article>
+    );
   }
 }
-
-export default Tour;
