@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Tour from "../Tour/tour.js";
-// import "./TourList.scss";
-import { tourData } from "../tourData.js";
+// import "./tourlist.scss";
+import { tourData } from "../../tourData";
 
 export class TourList extends Component {
   constructor() {
@@ -10,9 +10,21 @@ export class TourList extends Component {
       tours: tourData,
     };
   }
+
+  // const removeTours = () => {
+  // console.log(id)
+  // }
+
   render() {
-    console.log(this.state.tours);
-    return <Tour />;
+    const { tours } = this.state;
+
+    return (
+      <section className="tourlist">
+        {tours.map((tour) => (
+          <Tour key={tour.id} tour={tour}></Tour>
+        ))}
+      </section>
+    );
   }
 }
 
