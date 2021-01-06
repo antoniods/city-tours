@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import Tour from "../Tour/Tour";
+import Tour from "../Tour";
 import "./tourlist.scss";
 import { tourData } from "../../tourData";
 
 export default class TourList extends Component {
   state = {
-    tours: tourData,
+    tours: tourData
   };
-  //method
-  //if the id we passed is not equal to the id then retour the id
-  removeTour = (id) => {
+  removeTour = id => {
     const { tours } = this.state;
-    const sortedTours = tours.filter((tour) => tour.id !== id);
+    const sortedTours = tours.filter(tour => tour.id !== id);
     this.setState({
-      tours: sortedTours,
+      tours: sortedTours
     });
   };
   render() {
@@ -22,7 +20,7 @@ export default class TourList extends Component {
 
     return (
       <section className="tourlist">
-        {tours.map((tour) => (
+        {tours.map(tour => (
           <Tour key={tour.id} tour={tour} removeTour={this.removeTour} />
         ))}
       </section>
